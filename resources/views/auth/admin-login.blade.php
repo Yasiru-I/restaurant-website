@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
@@ -13,16 +14,22 @@
 </head>
 
 <body class="bg-white text-black">
-    <main>
-        <h1>Admin Login</h1>
+    <main class="mx-auto mt-16 max-w-md border border-black p-6">
+        <h1 class="text-2xl font-bold">
+            Admin Login
+        </h1>
 
-        <p>Sign in to manage the restaurant website.</p>
+        <p class="mt-2">
+            Sign in to manage the restaurant website.
+        </p>
 
-        <form method="POST" action="#">
+        <form method="POST" action="#" class="mt-6 space-y-4">
             @csrf
 
             <div>
-                <label for="email">Email</label>
+                <label for="email" class="block">
+                    Email
+                </label>
 
                 <input
                     id="email"
@@ -31,15 +38,18 @@
                     value="{{ old('email') }}"
                     required
                     autocomplete="email"
+                    class="mt-1 w-full border border-black p-2"
                 >
 
                 @error('email')
-                    <p>{{ $message }}</p>
+                    <p class="mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
             <div>
-                <label for="password">Password</label>
+                <label for="password" class="block">
+                    Password
+                </label>
 
                 <input
                     id="password"
@@ -47,10 +57,11 @@
                     type="password"
                     required
                     autocomplete="current-password"
+                    class="mt-1 w-full border border-black p-2"
                 >
 
                 @error('password')
-                    <p>{{ $message }}</p>
+                    <p class="mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -58,7 +69,10 @@
                 <p>{{ session('error') }}</p>
             @endif
 
-            <button type="submit">
+            <button
+                type="submit"
+                class="border border-black bg-black px-4 py-2 text-white"
+            >
                 Sign In
             </button>
         </form>
