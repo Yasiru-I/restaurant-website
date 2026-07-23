@@ -14,3 +14,7 @@ Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.
 // Public Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+})->middleware('auth')->name('admin.dashboard');
