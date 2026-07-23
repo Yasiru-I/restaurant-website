@@ -23,7 +23,7 @@
             Sign in to manage the restaurant website.
         </p>
 
-        <form method="POST" action="#" class="mt-6 space-y-4">
+        <form method="POST" action="{{ route('admin.login.submit') }}" class="mt-6 space-y-4">
             @csrf
 
             <div>
